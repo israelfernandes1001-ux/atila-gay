@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Qual é o macaco?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: gold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐵 Qual é o macaco?</h1>
+
+  <div class="container">
+    <img src="macaco.jpg" onclick="perdeu()">
+    <img src="pessoa.jpg" onclick="ganhou()">
+  </div>
+
+  <div id="resultado"></div>
+
+  <button onclick="reiniciar()">Jogar novamente</button>
+
+  <script>
+    function ganhou() {
+      document.getElementById("resultado").innerText = "✅ Você ganhou!";
+      document.querySelector("button").style.display = "block";
+    }
+
+    function perdeu() {
+      document.getElementById("resultado").innerText = "❌ Você perdeu!";
+      document.querySelector("button").style.display = "block";
+    }
+
+    function reiniciar() {
+      document.getElementById("resultado").innerText = "";
+      document.querySelector("button").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
